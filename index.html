@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
+            background: linear-gradient(135deg, #1a1a1a, #333);
             color: #fff;
             margin: 0;
             padding: 0;
@@ -19,42 +19,42 @@
 
         .container {
             text-align: center;
-            background: #333;
+            background: #222;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
             width: 90%;
             max-width: 400px;
         }
 
         .container h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 32px;
+            margin-bottom: 15px;
             color: #ff9800;
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             margin: 20px auto;
             background: #ff9800;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
         }
 
         .logo img {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
         }
 
         .btn {
             display: inline-block;
             background: #ff9800;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
@@ -76,34 +76,57 @@
             margin: 5px 0;
         }
 
-        .reviews {
+        .screenshots {
             margin-top: 30px;
-            text-align: left;
+            text-align: center;
         }
 
-        .review {
-            background: #444;
+        .screenshots img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-buttons button {
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
             padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
         }
 
-        .review h3 {
-            margin: 0;
-            font-size: 16px;
-            color: #ff9800;
-        }
-
-        .review p {
-            margin: 5px 0;
-            font-size: 14px;
-            color: #eee;
-        }
-
-        .stars {
-            color: #ff9800;
-            font-size: 14px;
+        .slider-buttons button:hover {
+            background: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
@@ -113,24 +136,55 @@
             <img src="logo.png" alt="App Logo">
         </div>
         <h1>GW Hack v4.9</h1>
-        <a href="#" class="btn">Download Now</a>
+        <a href="GW Hack v4.9.apk" class="btn">Download Now</a>
 
         <div class="details">
             <p>Version: 4.9</p>
             <p>Size: 24 MB</p>
+            <p>Last updated: August 2024</p>
         </div>
 
-        <div class="reviews">
-            <h2>User Reviews</h2>
-            <div class="review">
-                <h3>Deepak Kumar <span class="stars">★★★★★</span></h3>
-                <p>Amazing app, works perfectly!</p>
-            </div>
-            <div class="review">
-                <h3>Rakesh <span class="stars">★★★★☆</span></h3>
-                <p>Great app, this app changed my life.</p>
+        <div class="screenshots">
+            <div class="slider">
+                <div class="slides">
+                    <img src="screenshot1.png" alt="Screenshot 1">
+                    <img src="screenshot2.png" alt="Screenshot 2">
+                    <img src="screenshot3.png" alt="Screenshot 3">
+                </div>
+                <div class="slider-buttons">
+                    <button onclick="prevSlide()">&#10094;</button>
+                    <button onclick="nextSlide()">&#10095;</button>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        // Auto slide every 3 seconds
+        setInterval(nextSlide, 3000);
+    </script>
 </body>
 </html>
