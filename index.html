@@ -3,79 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APK Download</title>
+    <title>Download MyApp APK</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #f0f0f0, #cccccc);
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 10px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            text-align: center;
-            background: #fff;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 400px;
-        }
-
-        .container h1 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #333;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .logo img {
-            width: 100px;
+            width: 60px;
             height: auto;
-            margin: 20px auto;
         }
 
-        .btn {
-            display: inline-block;
-            background: #007bff;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
+        .app-title {
+            font-size: 24px;
             font-weight: bold;
+            margin-left: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-btn {
+            display: block;
+            background-color: #1a73e8;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
             margin-top: 20px;
-            transition: background 0.3s;
+            transition: background-color 0.3s ease;
         }
 
-        .btn:hover {
-            background: #0056b3;
+        .download-btn:hover {
+            background-color: #155ab2;
         }
 
-        .details {
+        .app-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-top: 20px;
-            font-size: 14px;
-            color: #555;
         }
 
-        .details p {
+        .app-details div {
+            text-align: left;
+        }
+
+        .app-details p {
             margin: 5px 0;
+            font-size: 16px;
+            color: #666;
         }
 
         .screenshots {
             margin-top: 30px;
         }
 
+        .screenshots h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
         .slider {
             position: relative;
-            width: 100%;
-            height: 300px;
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         .slides {
@@ -85,7 +98,7 @@
 
         .slides img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: contain;
         }
 
@@ -113,19 +126,26 @@
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <div class="header">
         <div class="logo">
             <img src="logo.png" alt="App Logo">
         </div>
-        <h1>GW Hack v4.9</h1>
-        <a href="GW Hack v4.9.apk" class="btn">Download Now</a>
+        <div class="app-title">GW Hack v4.9</div>
+    </div>
 
-        <div class="details">
-            <p>Version: v4.9</p>
-            <p>Size: 24 MB</p>
+    <div class="container">
+        <a href="GW Hack v4.9.apk" class="download-btn">Download APK</a>
+
+        <div class="app-details">
+            <div>
+                <p><strong>Version:</strong> 4.9</p>
+                <p><strong>Size:</strong> 24 MB</p>
+            </div>
         </div>
 
         <div class="screenshots">
+            <h2>Screenshots</h2>
             <div class="slider">
                 <div class="slides">
                     <img src="screenshot1.png" alt="Screenshot 1">
@@ -164,7 +184,6 @@
             showSlide(currentIndex - 1);
         }
 
-        // Auto slide every 4 seconds
         setInterval(nextSlide, 4000);
     </script>
 </body>
