@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a, #333);
-            color: #fff;
+            background: linear-gradient(135deg, #f0f0f0, #cccccc);
+            color: #333;
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,43 +19,32 @@
 
         .container {
             text-align: center;
-            background: #222;
+            background: #fff;
             padding: 20px;
             border-radius: 16px;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 400px;
         }
 
         .container h1 {
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 15px;
-            color: #ff9800;
-        }
-
-        .logo {
-            width: 120px;
-            height: 120px;
-            margin: 20px auto;
-            background: #ff9800;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            color: #333;
         }
 
         .logo img {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: auto;
+            margin: 20px auto;
         }
 
         .btn {
             display: inline-block;
-            background: #ff9800;
+            background: #007bff;
             color: #fff;
             padding: 12px 25px;
-            border-radius: 50px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             margin-top: 20px;
@@ -63,13 +52,13 @@
         }
 
         .btn:hover {
-            background: #e68900;
+            background: #0056b3;
         }
 
         .details {
             margin-top: 20px;
             font-size: 14px;
-            color: #ccc;
+            color: #555;
         }
 
         .details p {
@@ -78,23 +67,15 @@
 
         .screenshots {
             margin-top: 30px;
-            text-align: center;
-        }
-
-        .screenshots img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .slider {
             position: relative;
             width: 100%;
-            height: 250px;
+            height: 300px;
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .slides {
@@ -105,7 +86,7 @@
         .slides img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .slider-buttons {
@@ -118,15 +99,16 @@
         }
 
         .slider-buttons button {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
             border: none;
             color: white;
             padding: 10px;
             cursor: pointer;
+            border-radius: 50%;
         }
 
         .slider-buttons button:hover {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.6);
         }
     </style>
 </head>
@@ -139,9 +121,8 @@
         <a href="GW Hack v4.9.apk" class="btn">Download Now</a>
 
         <div class="details">
-            <p>Version: 4.9</p>
+            <p>Version: v4.9</p>
             <p>Size: 24 MB</p>
-            <p>Last updated: August 2024</p>
         </div>
 
         <div class="screenshots">
@@ -183,8 +164,8 @@
             showSlide(currentIndex - 1);
         }
 
-        // Auto slide every 3 seconds
-        setInterval(nextSlide, 3000);
+        // Auto slide every 4 seconds
+        setInterval(nextSlide, 4000);
     </script>
 </body>
 </html>
